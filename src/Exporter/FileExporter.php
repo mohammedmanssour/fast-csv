@@ -15,7 +15,7 @@ class FileExporter implements ExporterInterface
 
     public function export()
     {
-        if (isset($this->config->header) && !empty($this->config->header)) {
+        if (isset($this->config->header) && ! empty($this->config->header)) {
             $this->addLine($this->config->header);
         }
 

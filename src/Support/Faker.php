@@ -6,8 +6,6 @@ use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamDirectory;
 use PHPUnit\Framework\Assert;
 
-use function PHPUnit\Framework\assertTrue;
-
 class Faker
 {
     private bool $enabled = false;
@@ -22,6 +20,7 @@ class Faker
     public function enable(bool $shouldEnableFaker = true): static
     {
         $this->enabled = $shouldEnableFaker;
+
         return $this;
     }
 
@@ -57,6 +56,6 @@ class Faker
     public function assertCSVHasLine(string $path, array $expected)
     {
         $contents = file_get_contents($this->prefix($path));
-        Assert::assertStringContainsString(Arr::toCSVString($expected), $contents, "File does not contain the provided expected line.");
+        Assert::assertStringContainsString(Arr::toCSVString($expected), $contents, 'File does not contain the provided expected line.');
     }
 }

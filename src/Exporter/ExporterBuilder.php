@@ -2,12 +2,11 @@
 
 namespace MohammedManssour\FastCSV\Exporter;
 
-use Iterator;
 use ArrayIterator;
+use Iterator;
 use IteratorAggregate;
 use MohammedManssour\FastCSV\Config\ExportConfig;
 use MohammedManssour\FastCSV\FastCSV;
-use MohammedManssour\FastCSV\Support\Arr;
 use MohammedManssour\FastCSV\Traits\ConfiguresCSV;
 
 class ExporterBuilder
@@ -24,6 +23,7 @@ class ExporterBuilder
     public function header(array $header): static
     {
         $this->config->header = $header;
+
         return $this;
     }
 
@@ -45,6 +45,7 @@ class ExporterBuilder
         if (FastCSV::fake()->enabled()) {
             $file = FastCSV::fake()->file($file);
         }
-        return (new FileExporter($this->config, $file));
+
+        return new FileExporter($this->config, $file);
     }
 }

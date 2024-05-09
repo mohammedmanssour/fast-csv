@@ -13,8 +13,8 @@ class ArrTest extends TestCase
     public function it_convers_arr_to_csv_string()
     {
         $this->assertEquals(
-            "One,Two,Three",
-            Arr::toCSVString(["One", "Two", "Three"])
+            'One,Two,Three',
+            Arr::toCSVString(['One', 'Two', 'Three'])
         );
     }
 
@@ -24,8 +24,8 @@ class ArrTest extends TestCase
     public function it_join_paths()
     {
         $this->assertEquals(
-            "url://root/some/path/to/file",
-            Arr::pathsJoin(["url://root", "some", "/path", "to/", "/file/"])
+            'url://root/some/path/to/file',
+            Arr::pathsJoin(['url://root', 'some', '/path', 'to/', '/file/'])
         );
     }
 }

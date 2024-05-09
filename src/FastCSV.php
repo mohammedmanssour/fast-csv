@@ -2,13 +2,8 @@
 
 namespace MohammedManssour\FastCSV;
 
-use PHPUnit\Framework\Assert;
-use org\bovigo\vfs\vfsStreamDirectory;
-
-use function PHPUnit\Framework\assertTrue;
-use MohammedManssour\FastCSV\Support\Faker;
-use MohammedManssour\FastCSV\Traits\HasTestHelpers;
 use MohammedManssour\FastCSV\Exporter\ExporterBuilder;
+use MohammedManssour\FastCSV\Support\Faker;
 
 class FastCSV
 {
@@ -16,7 +11,7 @@ class FastCSV
 
     public static function fake(): Faker
     {
-        if (!isset(static::$faker)) {
+        if (! isset(static::$faker)) {
             static::$faker = new Faker();
         }
 
